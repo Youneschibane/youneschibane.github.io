@@ -5,7 +5,7 @@
    Leave a value as "" to hide that contact from the page.
    ============================================================ */
 const CONFIG = {
-  email: "",     // e.g. "name@example.com"
+  email: "oy_chibane@esi.dz",
   linkedin: ""   // full URL, e.g. "https://www.linkedin.com/in/your-handle"
 };
 
