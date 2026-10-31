@@ -1,227 +1,239 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Younes Chibane — Backend Developer & CS Student at ESI Algiers</title>
+  <meta name="description" content="Portfolio of Younes Chibane, a Computer Science student at ESI Algiers focused on backend development with Node.js, Express and MongoDB.">
+  <meta name="author" content="Younes Chibane">
+  <meta name="theme-color" content="#0f1720">
+  <link rel="canonical" href="https://youneschibane.github.io/">
 
-    <meta name="description" content="Younes Chibane - Computer Science student and aspiring Backend Developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Younes Chibane — Backend Developer">
+  <meta property="og:description" content="CS student at ESI Algiers building REST APIs with Node.js, Express and MongoDB.">
+  <meta property="og:url" content="https://youneschibane.github.io/">
+  <meta property="og:image" content="https://youneschibane.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <title>Younes Chibane | Developer Portfolio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <link rel="stylesheet" href="style.css">
-
-    <script src="script.js" defer></script>
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("portfolio-theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <a href="#home" class="logo">Younes<span>.</span></a>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo" aria-label="Younes Chibane, home">younes<span>.</span></a>
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#learning">Learning</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <div class="nav-actions">
-            <button class="theme-toggle" id="themeToggle"
-                    aria-label="Switch color theme">
-                ☀
-            </button>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch color theme"></button>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <button class="menu-toggle" id="menuToggle"
-                    aria-label="Toggle navigation">
-                ☰
-            </button>
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Science student · ESI Algiers</p>
+          <h1>Younes Chibane</h1>
+          <p class="lead">
+            I'm an aspiring <strong>backend developer</strong> who enjoys designing REST APIs,
+            modeling data and building the server-side logic that makes applications work.
+          </p>
+          <div class="btn-row">
+            <a href="#projects" class="btn btn-primary">View projects</a>
+            <a href="#contact" class="btn btn-ghost">Contact me</a>
+          </div>
+          <ul class="social-links" aria-label="Social links">
+            <li><a href="https://github.com/Youneschibane" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span> ↗</a></li>
+            <li data-contact="linkedin" hidden><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span> ↗</a></li>
+          </ul>
         </div>
-    </header>
 
-    <main>
+        <aside class="facts" aria-label="Quick facts">
+          <dl>
+            <div><dt>Focus</dt><dd>Backend development</dd></div>
+            <div><dt>Main stack</dt><dd>Node.js · Express · MongoDB</dd></div>
+            <div><dt>Studying</dt><dd>Computer Science, ESI Algiers</dd></div>
+            <div><dt>Languages</dt><dd>Arabic · French · English</dd></div>
+            <div><dt>Looking for</dt><dd>Remote junior / backend roles</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
 
-        <!-- Hero -->
-        <section class="hero" id="home">
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head"><p class="eyebrow">About</p><h2>A student engineer who likes what happens behind the screen</h2></header>
+        <div class="about-grid reveal">
+          <div class="prose">
+            <p>I study Computer Science at <strong>ESI Algiers</strong>, Algeria's national engineering school for computer science. My coursework mixes theory (computability, logic, probability, numerical methods) with practical programming in C, Java and JavaScript.</p>
+            <p>What draws me to backend work is the combination of design and rigor: shaping an API so it is clear to use, modeling data so it stays consistent, and protecting access with proper authentication.</p>
+            <p>Most of my practical experience comes from academic team projects, where I've learned as much about collaboration, Git workflows and debugging deployments as about code. I'm still learning, and I want to keep growing on real-world teams.</p>
+          </div>
+          <ul class="interest-list" aria-label="Technical interests">
+            <li>REST API design</li>
+            <li>Authentication &amp; authorization</li>
+            <li>Database modeling</li>
+            <li>Backend architecture</li>
+            <li>Debugging &amp; deployment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-            <div class="hero-content">
-                <p class="eyebrow">HELLO, I'M</p>
+    <!-- SKILLS -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <header class="section-head"><p class="eyebrow">Skills</p><h2>Technologies I use</h2>
+          <p class="section-note">Tools I've applied in coursework and team projects. Things I'm still picking up are listed under <a href="#learning">Currently learning</a>.</p>
+        </header>
+        <div class="skills-grid">
+          <article class="card reveal"><h3>Backend</h3><ul class="chips"><li>Node.js</li><li>Express.js</li><li>REST API design</li><li>JWT authentication</li><li>Role-based access</li><li>Email integration</li></ul></article>
+          <article class="card reveal"><h3>Databases</h3><ul class="chips"><li>MongoDB</li><li>Mongoose</li><li>Schema design</li><li>Geospatial queries</li></ul></article>
+          <article class="card reveal"><h3>Programming languages</h3><ul class="chips"><li>JavaScript</li><li>C</li><li>Java</li></ul></article>
+          <article class="card reveal"><h3>Tools &amp; technologies</h3><ul class="chips"><li>Git</li><li>GitHub</li><li>Postman</li><li>Render (deployment)</li><li>WSL / Linux shell</li></ul></article>
+          <article class="card reveal"><h3>Frontend fundamentals</h3><ul class="chips"><li>HTML5</li><li>CSS3</li><li>Responsive layout</li></ul></article>
+        </div>
+      </div>
+    </section>
 
-                <h1>Younes <span>Chibane</span></h1>
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head"><p class="eyebrow">Projects</p><h2>Selected work</h2></header>
 
-                <h2>Computer Science Student & Backend Developer</h2>
-
-                <p class="hero-description">
-                    I build backend applications and explore technologies
-                    that turn ideas into reliable software.
-                    Currently studying Computer Science at ESI Algiers.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        Explore my work
-                    </a>
-
-                    <a href="#contact" class="btn btn-outline">
-                        Contact me
-                    </a>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://github.com/Youneschibane"
-                       target="_blank" rel="noopener noreferrer">
-                        GitHub ↗
-                    </a>
-                </div>
+        <!-- ADD A NEW PROJECT: copy an <article class="project"> block below and edit it. -->
+        <article class="project featured reveal">
+          <div class="project-head">
+            <p class="badge">Academic team project</p>
+            <h3>Tutex — multi-level tutoring platform</h3>
+          </div>
+          <div class="project-body">
+            <div class="prose">
+              <h4>The problem</h4>
+              <p>Finding a qualified tutor, booking sessions and keeping parents informed is usually scattered across messages and word of mouth. Tutex centralizes this for students, parents and teachers across education levels.</p>
+              <h4>What the platform does</h4>
+              <ul class="plain-list">
+                <li>Accounts for students, parents and teachers, with parents able to enroll and book for their children.</li>
+                <li>Teacher search with location-aware results.</li>
+                <li>Session booking and management.</li>
+                <li>Document upload for teachers, with a diploma validation workflow reviewed by admins.</li>
+              </ul>
+              <h4>My contribution (backend)</h4>
+              <ul class="plain-list">
+                <li>Designed and built REST APIs with Node.js and Express.</li>
+                <li>Modeled data with MongoDB and Mongoose, including the parent–child enrollment relations.</li>
+                <li>Implemented authentication and authorization: JWT sessions per device, OTP-based flows and a two-step admin sign-in.</li>
+                <li>Structured business logic for search, booking and document access control.</li>
+                <li>Tested endpoints with Postman and helped debug deployment issues on Render.</li>
+              </ul>
+              <p class="small">A collaborative university project built by a team; the mobile client was built with React Native by teammates. It is not a commercial product.</p>
             </div>
+            <aside>
+              <h4 class="aside-title">Stack</h4>
+              <ul class="chips"><li>Node.js</li><li>Express.js</li><li>MongoDB</li><li>Mongoose</li><li>JWT</li><li>Postman</li><li>Render</li></ul>
+              <!-- Add a repository link here when the team repo is public:
+                   <a class="btn btn-ghost" href="REPO_URL">View repository ↗</a> -->
+            </aside>
+          </div>
+        </article>
 
-            <div class="hero-card">
-                <div class="code-window">
-                    <div class="window-header">
-                        <span></span><span></span><span></span>
-                        <small>developer.js</small>
-                    </div>
-
-                    <pre><code><span class="code-purple">const</span> developer = {
-  name: <span class="code-green">"Younes"</span>,
-  role: <span class="code-green">"Backend Developer"</span>,
-  education: <span class="code-green">"ESI Algiers"</span>,
-  skills: [
-    <span class="code-green">"Node.js"</span>,
-    <span class="code-green">"Express"</span>,
-    <span class="code-green">"MongoDB"</span>
-  ],
-  learning: <span class="code-green">"Every day"</span>
-};</code></pre>
-                </div>
+        <article class="project reveal">
+          <div class="project-head">
+            <p class="badge">Academic project</p>
+            <h3>Smart Farming System v2.0</h3>
+          </div>
+          <div class="project-body">
+            <div class="prose">
+              <p>A desktop application for managing farm data, built for an object-oriented programming course. It evolved from an earlier console version into a JavaFX application following the MVC pattern, with French, English and Arabic interface languages and a dark mode.</p>
             </div>
+            <aside><ul class="chips"><li>Java</li><li>JavaFX</li><li>MVC</li><li>OOP</li></ul></aside>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        </section>
+    <!-- EDUCATION -->
+    <section class="section alt" id="education">
+      <div class="container">
+        <header class="section-head"><p class="eyebrow">Education</p><h2>Academic background</h2></header>
+        <article class="card edu reveal">
+          <h3>École nationale Supérieure d'Informatique (ESI)</h3>
+          <p class="meta">Algiers, Algeria · Computer Science</p>
+          <p>Engineering program in computer science. Relevant coursework includes:</p>
+          <ul class="chips">
+            <li>Object-oriented programming</li><li>Operating systems (C)</li><li>Computability theory</li>
+            <li>Logic</li><li>Probability &amp; statistics</li><li>Numerical linear algebra</li><li>Information systems</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-        <!-- About -->
-        <section class="section" id="about">
-            <div class="section-heading">
-                <p class="eyebrow">GET TO KNOW ME</p>
-                <h2>About <span>Me</span></h2>
-            </div>
+    <!-- LEARNING -->
+    <section class="section" id="learning">
+      <div class="container">
+        <header class="section-head"><p class="eyebrow">Currently learning</p><h2>What I'm working on next</h2>
+          <p class="section-note">Topics I'm actively studying. I don't claim mastery of these yet.</p></header>
+        <ul class="learning-grid">
+          <li class="card reveal"><h3>Docker &amp; containers</h3><p>Packaging and running backend services in reproducible environments.</p></li>
+          <li class="card reveal"><h3>Linux &amp; system programming</h3><p>Processes, signals and the shell, through C assignments on <code>fork</code>/<code>exec</code>.</p></li>
+          <li class="card reveal"><h3>Automated API testing</h3><p>Moving beyond manual Postman checks toward repeatable tests.</p></li>
+          <li class="card reveal"><h3>Backend architecture</h3><p>Layering, validation, error handling and scalable project structure.</p></li>
+        </ul>
+      </div>
+    </section>
 
-            <div class="about-content">
-                <p>
-                    I'm a Computer Science student at ESI Algiers,
-                    interested in software engineering and backend
-                    development.
-                </p>
+    <!-- CONTACT -->
+    <section class="section alt" id="contact">
+      <div class="container contact">
+        <header class="section-head"><p class="eyebrow">Contact</p><h2>Let's talk</h2></header>
+        <p class="lead small-lead">I'm looking for remote junior and backend developer opportunities. If you have a role, a project or feedback, I'd be glad to hear from you.</p>
+        <ul class="contact-list">
+          <li data-contact="email" hidden><span>Email</span><a href="#"></a></li>
+          <li><span>GitHub</span><a href="https://github.com/Youneschibane" target="_blank" rel="noopener noreferrer">github.com/Youneschibane<span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li data-contact="linkedin" hidden><span>LinkedIn</span><a href="#" target="_blank" rel="noopener noreferrer"><span class="sr-only"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-                <p>
-                    I enjoy understanding how applications work behind
-                    the scenes, designing APIs, managing databases and
-                    building reliable server-side systems.
-                </p>
-
-                <p>
-                    I'm continuously improving my technical skills
-                    through academic projects and personal learning.
-                </p>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="section" id="skills">
-            <div class="section-heading">
-                <p class="eyebrow">WHAT I WORK WITH</p>
-                <h2>Technical <span>Skills</span></h2>
-            </div>
-
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <h3>Backend</h3>
-                    <p>Node.js · Express.js · REST APIs</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Database</h3>
-                    <p>MongoDB · Mongoose</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Languages</h3>
-                    <p>JavaScript · C · Java</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Tools</h3>
-                    <p>Git · GitHub · Postman</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Frontend</h3>
-                    <p>HTML · CSS</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="section" id="projects">
-            <div class="section-heading">
-                <p class="eyebrow">SOME OF MY WORK</p>
-                <h2>Featured <span>Projects</span></h2>
-            </div>
-
-            <article class="project-card">
-                <div class="project-top">
-                    <span class="project-label">ACADEMIC TEAM PROJECT</span>
-                    <span class="project-icon">↗</span>
-                </div>
-
-                <h3>Tutex — Tutoring Platform</h3>
-
-                <p>
-                    A multi-level tutoring and educational support
-                    platform designed to connect students, parents
-                    and teachers.
-                </p>
-
-                <p>
-                    My contribution focuses on backend development,
-                    including API development, database modeling
-                    and authentication.
-                </p>
-
-                <div class="tags">
-                    <span>Node.js</span>
-                    <span>Express.js</span>
-                    <span>MongoDB</span>
-                    <span>Mongoose</span>
-                </div>
-            </article>
-        </section>
-
-        <!-- Contact -->
-        <section class="section contact-section" id="contact">
-            <div class="section-heading">
-                <p class="eyebrow">LET'S CONNECT</p>
-                <h2>Get in <span>Touch</span></h2>
-            </div>
-
-            <p>
-                Interested in collaborating or discussing software
-                development? Feel free to reach out.
-            </p>
-
-            <a class="btn btn-primary"
-               href="https://github.com/Youneschibane"
-               target="_blank" rel="noopener noreferrer">
-                Find me on GitHub ↗
-            </a>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Younes Chibane. Built with HTML, CSS and JavaScript.</p>
-    </footer>
-
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Younes Chibane</p>
+      <p><a href="#home">Back to top ↑</a></p>
+    </div>
+  </footer>
 </body>
 </html>
