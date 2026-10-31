@@ -16,15 +16,17 @@ const CONFIG = {
       const a = item.querySelector("a");
       if (!a) return;
       a.href = href;
-      if (label) a.insertAdjacentText("afterbegin", label);
+      const v = a.querySelector(".ct-val");
+      if (v && label) v.textContent = label;
+      else if (label) a.insertAdjacentText("afterbegin", label);
       item.hidden = false;
     });
   };
   if (CONFIG.email) show("email", "mailto:" + CONFIG.email, CONFIG.email);
   if (CONFIG.linkedin) {
     show("linkedin", CONFIG.linkedin);
-    const c = document.querySelector('.contact-list [data-contact="linkedin"] a');
-    if (c) c.insertAdjacentText("afterbegin", CONFIG.linkedin.replace(/^https?:\/\/(www\.)?/, ""));
+    const c = document.querySelector('.contact-list [data-contact="linkedin"] .ct-val');
+    if (c) c.textContent = CONFIG.linkedin.replace(/^https?:\/\/(www\.)?/, "");
   }
 })();
 
@@ -116,7 +118,7 @@ if (lines.length) {
 
 /* ---------- Card spotlight (pointer devices only) ---------- */
 if (!reduce && matchMedia("(hover: hover)").matches) {
-  document.querySelectorAll(".card, .project").forEach((el) => {
+  document.querySelectorAll(".card, .project, .contact-card").forEach((el) => {
     el.addEventListener("pointermove", (e) => {
       const r = el.getBoundingClientRect();
       el.style.setProperty("--mx", (e.clientX - r.left) + "px");
