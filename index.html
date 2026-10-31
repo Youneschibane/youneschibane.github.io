@@ -34,6 +34,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="navbar">
     <div class="nav-inner">
@@ -62,11 +63,14 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
+      <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
+      <canvas id="net" class="net" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="status"><i></i>Open to remote junior &amp; backend roles</p>
           <p class="eyebrow">Computer Science student · ESI Algiers</p>
           <h1>Younes Chibane</h1>
+          <p class="roles" aria-hidden="true">I build <b id="role">REST APIs</b><i class="cursor"></i></p>
           <p class="lead">
             I'm an aspiring <strong>backend developer</strong> who enjoys designing REST APIs,
             modeling data and building the server-side logic that makes applications work.
@@ -107,10 +111,12 @@
         </aside>
     </section>
 
+    <div class="marquee" aria-hidden="true"><div class="track"><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Mongoose</span><span>REST APIs</span><span>JWT</span><span>Postman</span><span>Swagger</span><span>Git</span><span>GitHub</span><span>JavaScript</span><span>C</span><span>Java</span><span>Docker (learning)</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Mongoose</span><span>REST APIs</span><span>JWT</span><span>Postman</span><span>Swagger</span><span>Git</span><span>GitHub</span><span>JavaScript</span><span>C</span><span>Java</span><span>Docker (learning)</span></div></div>
+
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="container">
-        <header class="section-head"><p class="eyebrow">About</p><h2>A student engineer who likes what happens behind the screen</h2></header>
+        <header class="section-head reveal"><p class="eyebrow">About</p><h2>A student engineer who likes what happens behind the screen</h2></header>
         <div class="about-grid reveal">
           <div class="prose">
             <p>I study Computer Science at <strong>ESI Algiers</strong>, Algeria's national engineering school for computer science. My coursework mixes theory (computability, logic, probability, numerical methods) with practical programming in C, Java and JavaScript.</p>
@@ -131,7 +137,7 @@
     <!-- SKILLS -->
     <section class="section alt" id="skills">
       <div class="container">
-        <header class="section-head"><p class="eyebrow">Skills</p><h2>Technologies I use</h2>
+        <header class="section-head reveal"><p class="eyebrow">Skills</p><h2>Technologies I use</h2>
           <p class="section-note">Tools I've applied in coursework and team projects. Things I'm still picking up are listed under <a href="#learning">Currently learning</a>.</p>
         </header>
         <div class="skills-grid">
@@ -147,7 +153,7 @@
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
-        <header class="section-head"><p class="eyebrow">Projects</p><h2>Selected work</h2></header>
+        <header class="section-head reveal"><p class="eyebrow">Projects</p><h2>Selected work</h2></header>
 
         <!-- ADD A NEW PROJECT: copy an <article class="project"> block below and edit it. -->
         <article class="project featured reveal">
@@ -213,7 +219,7 @@
     <!-- EDUCATION -->
     <section class="section alt" id="education">
       <div class="container">
-        <header class="section-head"><p class="eyebrow">Education</p><h2>Academic background</h2></header>
+        <header class="section-head reveal"><p class="eyebrow">Education</p><h2>Academic background</h2></header>
         <article class="card edu reveal">
           <h3>École nationale Supérieure d'Informatique (ESI)</h3>
           <p class="meta">Algiers, Algeria · Computer Science · Currently in 1CS (first year of the engineering cycle)</p>
@@ -229,7 +235,7 @@
     <!-- LEARNING -->
     <section class="section" id="learning">
       <div class="container">
-        <header class="section-head"><p class="eyebrow">Currently learning</p><h2>What I'm working on next</h2>
+        <header class="section-head reveal"><p class="eyebrow">Currently learning</p><h2>What I'm working on next</h2>
           <p class="section-note">Topics I'm actively studying. I don't claim mastery of these yet.</p></header>
         <ul class="learning-grid">
           <li class="card reveal"><h3>Docker &amp; containers</h3><p>Packaging and running backend services in reproducible environments.</p></li>
@@ -243,7 +249,7 @@
     <!-- CONTACT -->
     <section class="section alt" id="contact">
       <div class="container contact">
-        <header class="section-head"><p class="eyebrow">Contact</p><h2>Let's talk</h2></header>
+        <header class="section-head reveal"><p class="eyebrow">Contact</p><h2>Let's talk</h2></header>
         <p class="lead small-lead">I'm looking for remote junior and backend developer opportunities. If you have a role, a project or feedback, I'd be glad to hear from you.</p>
         <ul class="contact-list">
           <li data-contact="email" hidden><span>Email</span><a href="#"></a></li>
