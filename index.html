@@ -64,6 +64,7 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy">
+          <p class="status"><i></i>Open to remote junior &amp; backend roles</p>
           <p class="eyebrow">Computer Science student · ESI Algiers</p>
           <h1>Younes Chibane</h1>
           <p class="lead">
@@ -79,8 +80,23 @@
             <li data-contact="linkedin" hidden><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span> ↗</a></li>
           </ul>
         </div>
+        <div class="terminal" role="img" aria-label="Illustrative example of REST API requests and responses">
+          <div class="term-bar"><span></span><span></span><span></span><small>tutex-api — example requests</small></div>
+          <div class="term-body">
+            <p class="line"><b class="c-prompt">$</b> curl -X POST /api/auth/login</p>
+            <p class="line c-ok">← 200 OK</p>
+            <p class="line c-dim">{ "token": "eyJhbGci…", "deviceId": "…" }</p>
+            <p class="line"><b class="c-prompt">$</b> curl /api/teachers/search</p>
+            <p class="line c-ok">← 200 OK</p>
+            <p class="line"><b class="c-prompt">$</b> curl /api/admin/documents</p>
+            <p class="line c-warn">← 403 Forbidden <span class="c-dim">// role check</span></p>
+            <p class="line c-dim caret">illustrative example, not live data</p>
+          </div>
+        </div>
+      </div>
 
-        <aside class="facts" aria-label="Quick facts">
+
+        <aside class="facts container" aria-label="Quick facts">
           <dl>
             <div><dt>Focus</dt><dd>Backend development</dd></div>
             <div><dt>Main stack</dt><dd>Node.js · Express · MongoDB</dd></div>
@@ -89,7 +105,6 @@
             <div><dt>Looking for</dt><dd>Remote junior / backend roles</dd></div>
           </dl>
         </aside>
-      </div>
     </section>
 
     <!-- ABOUT -->
@@ -140,6 +155,16 @@
             <p class="badge">Academic team project</p>
             <h3>Tutex — multi-level tutoring platform</h3>
           </div>
+          <figure class="arch" aria-label="Simplified backend architecture">
+            <div class="node"><b>Client</b><small>React Native app</small></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <div class="node hl"><b>Express API</b><small>routes · JWT auth · role checks</small></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <div class="node"><b>Controllers</b><small>booking · search · documents</small></div>
+            <span class="arrow" aria-hidden="true">→</span>
+            <div class="node"><b>MongoDB</b><small>Mongoose models</small></div>
+            <figcaption>Simplified view of the backend I worked on</figcaption>
+          </figure>
           <div class="project-body">
             <div class="prose">
               <h4>The problem</h4>

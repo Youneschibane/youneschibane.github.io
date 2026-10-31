@@ -105,3 +105,22 @@ if (reduce || !("IntersectionObserver" in window)) {
 /* ---------- Footer year ---------- */
 const y = document.getElementById("year");
 if (y) y.textContent = new Date().getFullYear();
+
+
+/* ---------- Terminal typing effect ---------- */
+const lines = document.querySelectorAll(".terminal .line");
+if (lines.length) {
+  if (reduce) lines.forEach((l) => l.classList.add("show"));
+  else lines.forEach((l, i) => setTimeout(() => l.classList.add("show"), 700 + i * 550));
+}
+
+/* ---------- Card spotlight (pointer devices only) ---------- */
+if (!reduce && matchMedia("(hover: hover)").matches) {
+  document.querySelectorAll(".card, .project").forEach((el) => {
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      el.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+}
