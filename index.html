@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younes Chibane | Developer Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 25px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .intro {
+            margin-bottom: 80px;
+        }
+
+        .intro p:first-child {
+            color: #38bdf8;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 15px 0;
+        }
+
+        .description {
+            color: #94a3b8;
+            max-width: 600px;
+        }
+
+        section {
+            margin-bottom: 65px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .project {
+            padding: 25px;
+            background: #1e293b;
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+            border-top: 1px solid #334155;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Younes.</h2>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="intro">
+            <p>HELLO, I'M</p>
+            <h1>Younes Chibane</h1>
+            <p class="description">
+                Computer Science Student at ESI Algiers,
+                focused on Backend Development and Software Engineering.
+            </p>
+        </div>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm a Computer Science student interested in building
+                reliable applications and solving technical problems.
+                I'm currently developing my skills in backend development
+                and modern web technologies.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <p>
+                JavaScript · Node.js · Express.js · MongoDB · Mongoose
+                · Git · GitHub · HTML · CSS
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>Tutex — Tutoring Platform</h3>
+                <p>
+                    An academic team project developing a multi-level
+                    tutoring and educational support platform.
+                    My contribution focuses on backend development
+                    using Node.js, Express.js and MongoDB.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                GitHub:
+                <a href="https://github.com/Youneschibane"
+                   style="color:#38bdf8;">
+                    github.com/Youneschibane
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Younes Chibane. All rights reserved.
+    </footer>
+
+</body>
+</html>
