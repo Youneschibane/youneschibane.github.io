@@ -1,0 +1,11 @@
+# Never commit secrets or local config
+.env
+.env.*
+*.pem
+*.key
+*firebase*key*.json
+serviceAccount*.json
+# Dependencies and OS files
+node_modules/
+.DS_Store
+Thumbs.db
