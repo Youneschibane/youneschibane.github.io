@@ -14,6 +14,10 @@ Hosted on GitHub Pages: https://youneschibane.github.io/
 Edit the `CONFIG` block at the top of `script.js` (email, LinkedIn). Empty values stay hidden.
 Never put passwords, tokens or API keys in this repository.
 
+## Optional links (config only, never invented)
+In `script.js` → `CONFIG`: `linkedin`, `links.swaggerLive` (hosted Swagger UI), `links.postman` (published Postman collection).
+Each button/card stays hidden until its URL is set.
+
 ## Add a project or screenshots
 Copy a `<article class="project">` block in `index.html`. For app screenshots, add optimized
 images (WebP/PNG) to `assets/screens/` and use the commented `<figure class="shots">` slot in the Tutex card.

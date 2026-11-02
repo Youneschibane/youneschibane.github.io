@@ -7,7 +7,11 @@
    ============================================================ */
 const CONFIG = {
   email: "oy_chibane@esi.dz",
-  linkedin: ""   // full URL, e.g. "https://www.linkedin.com/in/your-handle"
+  linkedin: "",  // full URL, e.g. "https://www.linkedin.com/in/your-handle"
+  links: {
+    swaggerLive: "",  // public URL of hosted Swagger UI (only if you deploy it), else ""
+    postman: ""       // public URL of your published Postman collection, else ""
+  }
 };
 
 const root = document.documentElement;
@@ -23,17 +27,25 @@ const hoverCapable = matchMedia("(hover: hover)").matches;
       a.href = href;
       const v = a.querySelector(".ct-val");
       if (v) v.textContent = label;
+      if (a.classList.contains("contact-card")) {
+        a.setAttribute("aria-label", key === "email" ? "Email Younes at " + label : "Younes on LinkedIn (opens in a new tab)");
+      }
       li.hidden = false;
     });
   };
   if (CONFIG.email) reveal("email", "mailto:" + CONFIG.email, CONFIG.email);
   if (CONFIG.linkedin) reveal("linkedin", CONFIG.linkedin, CONFIG.linkedin.replace(/^https?:\/\/(www\.)?/, ""));
 
+  Object.keys(CONFIG.links).forEach((k) => {
+    if (!CONFIG.links[k]) return;
+    document.querySelectorAll('[data-link="' + k + '"]').forEach((a) => { a.href = CONFIG.links[k]; a.hidden = false; });
+  });
+
   const btn = document.getElementById("copyEmail");
   const status = document.getElementById("copyStatus");
-  if (btn && CONFIG.email && navigator.clipboard) {
+  if (btn && CONFIG.email) {
     btn.addEventListener("click", () => {
-      navigator.clipboard.writeText(CONFIG.email).then(() => {
+      copyText(CONFIG.email).then(() => {
         btn.classList.add("done");
         if (status) status.textContent = "Email address copied";
         setTimeout(() => btn.classList.remove("done"), 1800);
@@ -137,6 +149,29 @@ if (tilt && !reduce && hoverCapable) {
     tilt.style.transform = "rotateY(" + x * 9 + "deg) rotateX(" + -y * 9 + "deg)";
   });
   tilt.addEventListener("pointerleave", () => { tilt.style.transform = ""; });
+}
+
+/* ---------- Copy helper (terminal + email) ---------- */
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+  return new Promise((resolve, reject) => {           // fallback for non-secure contexts
+    const t = document.createElement("textarea");
+    t.value = text; t.setAttribute("readonly", ""); t.style.cssText = "position:fixed;opacity:0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy") ? resolve() : reject(); } catch (e) { reject(e); }
+    t.remove();
+  });
+}
+const copyTerm = document.getElementById("copyTerm");
+if (copyTerm) {
+  const label = copyTerm.querySelector("span");
+  copyTerm.addEventListener("click", () => {
+    const text = [...document.querySelectorAll(".terminal .cmd")].map((c) => c.textContent).join("\n");
+    copyText(text).then(() => {
+      label.textContent = "Copied!"; copyTerm.classList.add("done");
+      const s = document.getElementById("copyStatus"); if (s) s.textContent = "Example commands copied";
+    }).catch(() => { label.textContent = "Press Ctrl+C"; }).finally(() => setTimeout(() => { label.textContent = "Copy"; copyTerm.classList.remove("done"); }, 1800));
+  });
 }
 
 /* ---------- Hero network canvas (paused off-screen / hidden tab) ---------- */
